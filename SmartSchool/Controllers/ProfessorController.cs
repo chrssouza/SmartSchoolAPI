@@ -11,9 +11,11 @@ namespace SmartSchool.Controllers
     public class ProfessorController : ControllerBase
     {
         private readonly SmartContext _context;
-        public ProfessorController(SmartContext context)
+        public readonly IRepository _repo;
+        public ProfessorController(SmartContext context, IRepository repo)
         {
             _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
@@ -28,7 +30,18 @@ namespace SmartSchool.Controllers
             var professor = _context.Professores.FirstOrDefault(p => p.Id == id);
             if (professor == null)
             {
-                return BadRequest("Id não encontrado");
+                return BadRequest("Professor não encontrado");
+            }
+            return Ok(professor);
+        }
+
+        [HttpGet("nome")]
+        public IActionResult BuscarPorNome(int id, string nome)
+        {
+            var professor = _context.Professores.FirstOrDefault(p => p.Nome.Contains(nome));
+            if (professor == null)
+            {
+                return BadRequest("Professor não encontrado");
             }
             return Ok(professor);
         }
@@ -36,9 +49,12 @@ namespace SmartSchool.Controllers
         [HttpPost]
         public IActionResult Post(Professor professor)
         {
-            _context.Add(professor);
-            _context.SaveChanges();
-            return Ok(professor);
+            _repo.Add(professor);
+            if (_repo.SaveChanges())
+            {
+                return Ok(professor);
+            }
+            return BadRequest("professor não encontrado");
         }
 
         [HttpPut("{id}")]
@@ -47,7 +63,7 @@ namespace SmartSchool.Controllers
             var profe = _context.Professores.AsNoTracking().FirstOrDefault(p => p.Id == id);
             if (profe == null)
             {
-                return BadRequest("Id não encontrado");
+                return BadRequest("Professor não encontrado");
             }
             _context.Update(professor);
             _context.SaveChanges();
@@ -60,7 +76,7 @@ namespace SmartSchool.Controllers
             var profe = _context.Professores.AsNoTracking().FirstOrDefault(p => p.Id == id);
             if (profe == null)
             {
-                return BadRequest("Id não encontrado");
+                return BadRequest("Professor não encontrado");
             }
             _context.Update(professor);
             _context.SaveChanges();
@@ -73,7 +89,7 @@ namespace SmartSchool.Controllers
             var professor = _context.Professores.FirstOrDefault(p => p.Id == id);
             if (professor == null)
             {
-                return BadRequest("Id não encontrado");
+                return BadRequest("Professor não encontrado");
             }
             _context.Remove(professor);
             _context.SaveChanges();
