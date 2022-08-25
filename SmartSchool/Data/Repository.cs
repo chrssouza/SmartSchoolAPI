@@ -64,7 +64,7 @@ namespace SmartSchool.Data
                 .OrderBy(a => a.Id) // retornando de forma ordenada
                 .Where(aluno => aluno.AlunoDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId));
 
-            return query.ToArray();
+            return query.ToArray(); // retornando a consulta
         }
 
         public Aluno GetAlunoById(int alunoId, bool includeProfessor = false)
