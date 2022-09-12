@@ -9,12 +9,16 @@ namespace SmartSchool.Data
         void Remove<T>(T entity) where T : class;
         bool SaveChanges();
 
-        Aluno[] GetAllAlunos();
-        Aluno[] GetAllAlunosByDisciplinaId();
-        Aluno GetAlunoById();
+      
+        // Aluno
+        public Aluno[] GetAllAlunos(bool includeProfessor = false);
+        public Aluno[] GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false);
+        public Aluno GetAlunoById(int alunoId, bool includeProfessor = false);
 
-        Professor[] GetAllProfessores();
-        Professor[] GetAllProfessoresByDisciplinaId();
-        Professor GetProfessorById();
+        // Professor
+        public Professor[] GetAllProfessores(bool includeAlunos = false);
+        public Professor[] GetAllProfessoresByDisciplinaId(int disciplinaId, bool includeAlunos = false);
+        public Professor GetProfessorById(int professorId, bool includeProfessor = false);
+
     }
 }

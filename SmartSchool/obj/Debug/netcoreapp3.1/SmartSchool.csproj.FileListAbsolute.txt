@@ -61,3 +61,11 @@ F:\Projetos Curso Criando uma WebAPI RESTful\SmartSchool.WebAPI\SmartSchool\obj\
 F:\Projetos Curso Criando uma WebAPI RESTful\SmartSchool.WebAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.dll
 F:\Projetos Curso Criando uma WebAPI RESTful\SmartSchool.WebAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.pdb
 F:\Projetos Curso Criando uma WebAPI RESTful\SmartSchool.WebAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.genruntimeconfig.cache
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.dll
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.pdb
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.csproj.AssemblyReference.cache
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.AssemblyInfoInputs.cache
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.AssemblyInfo.cs
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.csproj.CoreCompileInputs.cache
+C:\Tst\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.MvcApplicationPartsAssemblyInfo.cache
