@@ -39,7 +39,7 @@ namespace SmartSchool.Data
 
             if (includeProfessor)
             {
-                query = query.Include(a => a.AlunoDisciplinas)
+                query = query.Include(a => a.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Disciplina)
                     .ThenInclude(d => d.Professor);
             }
@@ -55,14 +55,14 @@ namespace SmartSchool.Data
 
             if (includeProfessor)
             {
-                query = query.Include(a => a.AlunoDisciplinas)
+                query = query.Include(a => a.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Disciplina)
                     .ThenInclude(d => d.Professor);
             }
 
             query = query.AsTracking()
                 .OrderBy(a => a.Id) // retornando de forma ordenada
-                .Where(aluno => aluno.AlunoDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId));
+                .Where(aluno => aluno.AlunosDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId));
 
             return query.ToArray(); // retornando a consulta
         }
@@ -73,7 +73,7 @@ namespace SmartSchool.Data
 
             if (includeProfessor)
             {
-                query = query.Include(a => a.AlunoDisciplinas)
+                query = query.Include(a => a.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Disciplina)
                     .ThenInclude(d => d.Professor);
             }
@@ -92,7 +92,7 @@ namespace SmartSchool.Data
             if (includeAlunos)
             {
                 query = query.Include(p => p.Disciplinas)
-                    .ThenInclude(d => d.AlunoDisciplinas)
+                    .ThenInclude(d => d.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Aluno);
             }
 
@@ -107,14 +107,14 @@ namespace SmartSchool.Data
             if (includeAlunos)
             {
                 query = query.Include(p => p.Disciplinas)
-                    .ThenInclude(d => d.AlunoDisciplinas)
+                    .ThenInclude(d => d.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Aluno);
             }
 
             query = query.AsNoTracking()
                 .OrderBy(aluno => aluno.Id)
                 .Where(aluno => aluno.Disciplinas.Any(
-                    d => d.AlunoDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId)));
+                    d => d.AlunosDisciplinas.Any(ad => ad.DisciplinaId == disciplinaId)));
 
             return query.ToArray();
         }
@@ -126,7 +126,7 @@ namespace SmartSchool.Data
             if (includeProfessor)
             {
                 query = query.Include(p => p.Disciplinas)
-                    .ThenInclude(d => d.AlunoDisciplinas)
+                    .ThenInclude(d => d.AlunosDisciplinas)
                     .ThenInclude(ad => ad.Aluno);
             }
 
