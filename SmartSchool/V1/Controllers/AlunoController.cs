@@ -1,27 +1,38 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SmartSchool.Data;
-using SmartSchool.Dtos;
 using SmartSchool.Models;
+using SmartSchool.V1.Dtos;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace SmartSchool.Controllers
+namespace SmartSchool.V1.Controllers
 {
+    /// <summary>
+    /// Versão 1 da minha controller de Alunos
+    /// </summary>
     [ApiController]
-    [Route("api/[Controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="mapper"></param>
         public AlunoController(IRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Método responsável para retornar todos os meus alunos.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult BuscarTodos()
         {
@@ -29,12 +40,21 @@ namespace SmartSchool.Controllers
             return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
         }
 
+        /// <summary>
+        /// Método responsável por retornar apenas um único AlunoDto.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("getRegister")]
         public IActionResult getRegister()
         {
             return Ok(new AlunoRegistrarDto());
         }
 
+        /// <summary>
+        /// Método responsável por retornar apenas um aluno por meio do código Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // api/aluno
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)

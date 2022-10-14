@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using SmartSchool.Dtos;
+using SmartSchool.V1.Dtos;
 using SmartSchool.Models;
+using SmartSchool.Helpers;
 
-namespace SmartSchool.Helpers
+namespace SmartSchool.WebAPI.V1.Profiles
 {
     public class SmartSchoolProfile : Profile
     {
@@ -18,8 +19,8 @@ namespace SmartSchool.Helpers
                 opt => opt.MapFrom(src => src.DataNasc.GetCurrentAge())
                 );
 
-           CreateMap<AlunoDto, Aluno>();
-           CreateMap<Aluno, AlunoRegistrarDto>().ReverseMap();
+            CreateMap<AlunoDto, Aluno>();
+            CreateMap<Aluno, AlunoRegistrarDto>().ReverseMap();
 
             CreateMap<Professor, ProfessorDto>()
                 .ForMember(

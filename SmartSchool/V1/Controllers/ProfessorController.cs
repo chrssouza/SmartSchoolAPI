@@ -2,15 +2,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.Data;
-using SmartSchool.Dtos;
+using SmartSchool.V1.Dtos;
 using SmartSchool.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SmartSchool.Controllers
+namespace SmartSchool.V1.Controllers
 {
+    /// <summary>
+    /// Versão 1 da minha controller de Professores
+    /// </summary>
     [ApiController]
-    [Route("api/[Controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[Controller]")]
     public class ProfessorController : ControllerBase
     {
         

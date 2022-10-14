@@ -195,3 +195,9 @@ E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\obj\Debu
 E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.genruntimeconfig.cache
 E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\obj\Debug\netcoreapp3.1\SmartSchool.MvcApplicationPartsAssemblyInfo.cs
+E:\Projetos Curso Criando uma WebAPI RESTful\SmartSchoolAPI\SmartSchool\bin\Debug\netcoreapp3.1\SmartSchool.WebAPI.xml
