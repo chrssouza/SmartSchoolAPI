@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using SmartSchool.Data;
 using SmartSchool.Models;
 using SmartSchool.V1.Dtos;
+using SmartSchool.WebAPI.Helpers;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SmartSchool.V1.Controllers
 {
@@ -34,10 +36,14 @@ namespace SmartSchool.V1.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult BuscarTodos()
+        public async Task<IActionResult> BuscarTodos([FromQuery]PageParams pageParams)
         {
-            var alunos = _repo.GetAllAlunos(true);         
-            return Ok(_mapper.Map<IEnumerable<AlunoDto>>(alunos));
+            var alunos = await _repo.GetAllAlunosAsync(pageParams, true);
+            var alunosResult = _mapper.Map<IEnumerable<AlunoDto>>(alunos);
+
+            Response.AddPagination(alunos.CurrentPage, alunos.PageSize, alunos.TotalCount, alunos.TotalPages);
+
+            return Ok(alunosResult);
         }
 
         /// <summary>
